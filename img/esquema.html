@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Constitución Política del Perú</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    body {
+        font-family: 'Georgia', serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    .header {
+        background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+        animation: float 20s infinite linear;
+    }
+    
+    @keyframes float {
+        0% { transform: translateX(0) translateY(0); }
+        100% { transform: translateX(-50px) translateY(-50px); }
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1;
+    }
+    
+    .header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .content {
+        padding: 40px;
+    }
+    
+    .section {
+        margin-bottom: 40px;
+        animation: fadeInUp 0.6s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .section h2 {
+        color: #c41e3a;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #c41e3a;
+        position: relative;
+    }
+    
+    .section h3 {
+        color: #8b0000;
+        font-size: 1.4rem;
+        margin: 25px 0 15px 0;
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    .section h3::before {
+        content: '▶';
+        color: #c41e3a;
+        position: absolute;
+        left: 0;
+        font-size: 0.8rem;
+    }
+    
+    .section h4 {
+        color: #444;
+        font-size: 1.2rem;
+        margin: 20px 0 10px 0;
+        padding-left: 30px;
+        font-weight: 600;
+    }
+    
+    .subsection {
+        background: linear-gradient(135deg, #f8f9ff 0%, #f0f2f8 100%);
+        padding: 25px;
+        margin: 20px 0;
+        border-radius: 15px;
+        border-left: 5px solid #c41e3a;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .subsection:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+    
+    .estructura-titulo {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        margin: 30px 0;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .capitulo {
+        background: rgba(196, 30, 58, 0.05);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 10px;
+        border-left: 4px solid #c41e3a;
+    }
+    
+    .capitulo h5 {
+        color: #c41e3a;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    ul, ol {
+        padding-left: 30px;
+        margin: 15px 0;
+    }
+    
+    li {
+        margin: 8px 0;
+        color: #555;
+    }
+    
+    .highlight {
+        background: linear-gradient(120deg, rgba(255, 235, 59, 0.3) 0%, rgba(255, 193, 7, 0.3) 100%);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #ffc107;
+        margin: 20px 0;
+    }
+    
+    .timeline {
+        position: relative;
+        padding-left: 30px;
+    }
+    
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, #c41e3a, #8b0000);
+    }
+    
+    .timeline-item {
+        position: relative;
+        margin: 20px 0;
+        padding: 15px 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -25px;
+        top: 20px;
+        width: 12px;
+        height: 12px;
+        background: #c41e3a;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px #c41e3a;
+    }
+    
+    .footer {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    .footer p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+    
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 2rem;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .section h2 {
+            font-size: 1.6rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LA CONSTITUCIÓN POLÍTICA DEL PERÚ</h1>
+            <p>Análisis Completo y Estructura Detallada</p>
+        </div>
+    <div class="content">
+        <div class="section">
+            <h2>1. HISTORIA DE LA CONSTITUCIÓN PERUANA</h2>
+            
+            <div class="subsection">
+                <h3>Evolución Constitucional</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>Primera Constitución (1823)</strong>: Promulgada durante el gobierno de José de la Riva Agüero
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Constitución de 1826</strong>: Inspirada en el proyecto bolivariano
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Constitución de 1828</strong>: Primera constitución liberal del Perú
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Constituciones del siglo XIX</strong>: 1834, 1839, 1856, 1860, 1867
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Constitución de 1920</strong>: Incorporó derechos sociales y económicos
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Constitución de 1933</strong>: Vigente durante gran parte del siglo XX
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Constitución de 1979</strong>: Retorno a la democracia tras el gobierno militar
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Constitución actual (1993)</strong>: Promulgada durante el gobierno de Alberto Fujimori
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Contexto de la Constitución de 1993</h3>
+                <ul>
+                    <li>Promulgada el 29 de diciembre de 1993</li>
+                    <li>Aprobada mediante referéndum el 31 de octubre de 1993</li>
+                    <li>Reemplazó a la Constitución de 1979</li>
+                    <li>Contexto de reforma económica neoliberal y reestructuración del Estado</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. CONCEPTO</h2>
+            
+            <div class="highlight">
+                <h3>Definición</h3>
+                <p>La Constitución Política del Perú es la <strong>norma jurídica suprema</strong> del ordenamiento jurídico peruano que:</p>
+                <ul>
+                    <li>Establece la organización fundamental del Estado</li>
+                    <li>Define los derechos y deberes de las personas</li>
+                    <li>Regula el ejercicio del poder político</li>
+                    <li>Establece los principios básicos de convivencia social</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Características Principales</h3>
+                <ul>
+                    <li><strong>Supremacía constitucional</strong>: Es la norma de mayor jerarquía</li>
+                    <li><strong>Rigidez</strong>: Su modificación requiere procedimientos especiales</li>
+                    <li><strong>Normatividad</strong>: Contiene normas jurídicas vinculantes</li>
+                    <li><strong>Estabilidad</strong>: Permanencia en el tiempo</li>
+                    <li><strong>Integralidad</strong>: Abarca todos los aspectos fundamentales del Estado</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. CONTENIDO Y FINALIDAD</h2>
+            
+            <div class="subsection">
+                <h3>Para qué sirve</h3>
+                
+                <h4>1. Organizar el poder del Estado</h4>
+                <ul>
+                    <li>División de poderes</li>
+                    <li>Sistema de gobierno</li>
+                    <li>Distribución de competencias</li>
+                </ul>
+                
+                <h4>2. Proteger los derechos fundamentales</h4>
+                <ul>
+                    <li>Garantías constitucionales</li>
+                    <li>Mecanismos de protección</li>
+                    <li>Límites al poder estatal</li>
+                </ul>
+                
+                <h4>3. Establecer principios de convivencia</h4>
+                <ul>
+                    <li>Valores democráticos</li>
+                    <li>Pluralismo</li>
+                    <li>Estado de derecho</li>
+                </ul>
+                
+                <h4>4. Regular la economía y sociedad</h4>
+                <ul>
+                    <li>Régimen económico</li>
+                    <li>Papel del Estado en la economía</li>
+                    <li>Derechos sociales</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. ESTRUCTURA DE LA CONSTITUCIÓN DE 1993</h2>
+            
+            <div class="estructura-titulo">
+                PREÁMBULO
+            </div>
+            <p>Declaración de principios y objetivos fundamentales del Estado peruano</p>
+            
+            <div class="estructura-titulo">
+                TÍTULO I: DE LA PERSONA Y DE LA SOCIEDAD
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo I: Derechos Fundamentales de la Persona</h5>
+                <ul>
+                    <li>Derecho a la vida, identidad, integridad</li>
+                    <li>Libertades fundamentales</li>
+                    <li>Igualdad ante la ley</li>
+                    <li>Derechos civiles y políticos</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo II: De los Derechos Sociales y Económicos</h5>
+                <ul>
+                    <li>Derecho al trabajo</li>
+                    <li>Derecho a la educación</li>
+                    <li>Derecho a la salud</li>
+                    <li>Derecho a la seguridad social</li>
+                    <li>Derechos de la familia</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo III: De los Derechos Políticos y de los Deberes</h5>
+                <ul>
+                    <li>Ciudadanía</li>
+                    <li>Derecho de participación política</li>
+                    <li>Sufragio</li>
+                    <li>Deberes fundamentales</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo IV: De las Garantías Constitucionales</h5>
+                <ul>
+                    <li>Acción de hábeas corpus</li>
+                    <li>Acción de amparo</li>
+                    <li>Acción de hábeas data</li>
+                    <li>Acción de inconstitucionalidad</li>
+                    <li>Acción popular</li>
+                    <li>Acción de cumplimiento</li>
+                </ul>
+            </div>
+            
+            <div class="estructura-titulo">
+                TÍTULO II: DEL ESTADO Y LA NACIÓN
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo I: Del Estado, la Nación y el Territorio</h5>
+                <ul>
+                    <li>Definición del Estado peruano</li>
+                    <li>Territorio nacional</li>
+                    <li>Símbolos patrios</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo II: De los Tratados</h5>
+                <ul>
+                    <li>Jerarquía de los tratados internacionales</li>
+                    <li>Procedimiento de ratificación</li>
+                </ul>
+            </div>
+            
+            <div class="estructura-titulo">
+                TÍTULO III: DEL RÉGIMEN ECONÓMICO
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo I: Principios Generales</h5>
+                <ul>
+                    <li>Economía social de mercado</li>
+                    <li>Rol del Estado en la economía</li>
+                    <li>Libre competencia</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo II: Del Ambiente y los Recursos Naturales</h5>
+                <ul>
+                    <li>Protección ambiental</li>
+                    <li>Recursos naturales</li>
+                    <li>Desarrollo sostenible</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo III: De la Propiedad</h5>
+                <ul>
+                    <li>Derecho de propiedad</li>
+                    <li>Expropiación</li>
+                    <li>Propiedad privada y función social</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo IV: Del Régimen Tributario y Presupuestal</h5>
+                <ul>
+                    <li>Sistema tributario</li>
+                    <li>Presupuesto público</li>
+                    <li>Principios tributarios</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo V: De la Moneda y la Banca</h5>
+                <ul>
+                    <li>Banco Central de Reserva</li>
+                    <li>Sistema financiero</li>
+                    <li>Moneda nacional</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo VI: Del Régimen Agrario y de las Comunidades Campesinas y Nativas</h5>
+                <ul>
+                    <li>Política agraria</li>
+                    <li>Comunidades campesinas y nativas</li>
+                    <li>Tierras de las comunidades</li>
+                </ul>
+            </div>
+            
+            <div class="estructura-titulo">
+                TÍTULO IV: DE LA ESTRUCTURA DEL ESTADO
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo I: Poder Legislativo</h5>
+                <ul>
+                    <li>Congreso de la República</li>
+                    <li>Función legislativa</li>
+                    <li>Organización y funcionamiento</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo II: De la Función Legislativa</h5>
+                <ul>
+                    <li>Proceso de formación de leyes</li>
+                    <li>Tipos de leyes</li>
+                    <li>Iniciativa legislativa</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo III: Poder Ejecutivo</h5>
+                <ul>
+                    <li>Presidente de la República</li>
+                    <li>Consejo de Ministros</li>
+                    <li>Funciones ejecutivas</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo IV: Poder Judicial</h5>
+                <ul>
+                    <li>Organización judicial</li>
+                    <li>Principios de la función jurisdiccional</li>
+                    <li>Carrera judicial</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo V: Del Consejo Nacional de la Magistratura</h5>
+                <ul>
+                    <li>Funciones</li>
+                    <li>Composición</li>
+                    <li>Nombramiento de jueces</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo VI: Del Ministerio Público</h5>
+                <ul>
+                    <li>Fiscalía de la Nación</li>
+                    <li>Función fiscal</li>
+                    <li>Autonomía</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo VII: Del Tribunal Constitucional</h5>
+                <ul>
+                    <li>Composición</li>
+                    <li>Competencias</li>
+                    <li>Control constitucional</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo VIII: De la Descentralización, las Regiones y las Municipalidades</h5>
+                <ul>
+                    <li>Proceso de descentralización</li>
+                    <li>Gobiernos regionales</li>
+                    <li>Gobiernos locales</li>
+                </ul>
+            </div>
+            
+            <div class="capitulo">
+                <h5>Capítulo IX: Del Sistema Electoral</h5>
+                <ul>
+                    <li>Jurado Nacional de Elecciones</li>
+                    <li>Oficina Nacional de Procesos Electorales</li>
+                    <li>Registro Nacional de Identificación y Estado Civil</li>
+                </ul>
+            </div>
+            
+            <div class="estructura-titulo">
+                TÍTULO V: DE LAS GARANTÍAS CONSTITUCIONALES
+            </div>
+            <ul>
+                <li>Defensoría del Pueblo</li>
+                <li>Control constitucional</li>
+                <li>Estado de emergencia y sitio</li>
+            </ul>
+            
+            <div class="estructura-titulo">
+                TÍTULO VI: DE LA REFORMA DE LA CONSTITUCIÓN
+            </div>
+            <ul>
+                <li>Procedimiento de reforma constitucional</li>
+                <li>Iniciativa de reforma</li>
+                <li>Aprobación y ratificación</li>
+            </ul>
+            
+            <div class="estructura-titulo">
+                DISPOSICIONES FINALES Y TRANSITORIAS
+            </div>
+            <ul>
+                <li>Normas de aplicación temporal</li>
+                <li>Derogación de normas anteriores</li>
+                <li>Disposiciones especiales</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. PRINCIPIOS FUNDAMENTALES</h2>
+            
+            <div class="subsection">
+                <h3>Principios del Estado Peruano</h3>
+                <ol>
+                    <li><strong>Democracia</strong>: Gobierno del pueblo</li>
+                    <li><strong>República</strong>: Separación de poderes y responsabilidad</li>
+                    <li><strong>Estado de Derecho</strong>: Sometimiento al ordenamiento jurídico</li>
+                    <li><strong>Descentralización</strong>: Distribución territorial del poder</li>
+                    <li><strong>Pluralismo</strong>: Respeto a la diversidad</li>
+                </ol>
+            </div>
+            
+            <div class="highlight">
+                <h3>Valores Constitucionales</h3>
+                <ul>
+                    <li>Dignidad humana</li>
+                    <li>Justicia</li>
+                    <li>Libertad</li>
+                    <li>Igualdad</li>
+                    <li>Solidaridad</li>
+                    <li>Paz social</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. IMPORTANCIA Y VIGENCIA</h2>
+            
+            <div class="subsection">
+                <h3>Relevancia Actual</h3>
+                <ul>
+                    <li>Marco jurídico fundamental del Estado peruano</li>
+                    <li>Base para el desarrollo democrático</li>
+                    <li>Protección de derechos fundamentales</li>
+                    <li>Organización del poder político</li>
+                    <li>Regulación de la vida económica y social</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Desafíos Contemporáneos</h3>
+                <ul>
+                    <li>Reforma constitucional</li>
+                    <li>Fortalecimiento democrático</li>
+                    <li>Protección de derechos humanos</li>
+                    <li>Descentralización efectiva</li>
+                    <li>Desarrollo económico sostenible</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>La Constitución Política del Perú - Fundamento del Estado Democrático de Derecho</p>
+    </div>
+</div>
+</body>
+</html>
