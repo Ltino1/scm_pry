@@ -1,0 +1,116 @@
+:root {
+    --fondoPagina: #F5F7FA;
+    --fuentePrincipal: "Chivo", sans-serif;
+    --tamanoFuente: 1.4rem;
+    --colorFuente: #52525B;
+    --colorPrimario: #132F47;
+    --colorSecundario: #E5B23F;
+    --colorBlanco: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--fondoPagina);
+    font-family: var(--fuentePrincipal);
+    font-size: var(--tamanoFuente);
+    color: var(--colorFuente);
+
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100dvh;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 24rem 1fr;
+    height: 100dvh;
+}
+
+.sidebar {
+    border-right: .1rem solid #E6EAEE;
+}
+
+/*BARRA*/
+.barra {
+    background-color: var(--colorSecundario);
+    color: var(--colorBlanco);
+    display: block;
+    padding: 1.5rem 0;
+}
+
+.barra .barra__contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Login*/
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 40rem;
+}
+
+.login .login__contenido {
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: var(--colorBlanco);
+    box-shadow: 0 0 .2rem 0 var(--colorFuente);
+}
+
+/* FORMULARIO*/
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario .form__control {
+    margin-bottom: .8rem;
+}
+
+.formulario label {
+    display: block;
+    font-weight: 600;
+}
+
+.formulario input {
+    width: 100%;
+    padding: .8rem;
+    border-radius: .5rem;
+    border: .1rem solid var(--colorFuente);
+    outline: none;
+}
+
+/*ALERTA*/
+
+.alerta {
+    margin: 1rem;
+}
+
+.alerta-error{
+    color: red;
+}
